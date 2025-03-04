@@ -100,7 +100,7 @@ class NewBranchScript(Script):
             count += 1
         
         Region = data['site_region']
-        prefixes = Prefix.objects.filter(site_region=Region)
+        prefixes = Prefix.objects.filter(site__region=Region)
         self.log_info(f"Prefixes in region '{Region.name}': ")
         if prefix:
             for prefix in prefixes:
